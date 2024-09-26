@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  _id: String
+  email: String!
+  password: String!
+  first_name: String
+  last_name: String
+  phone_number: String
+}
+
+type Query {
+  findAllUsers: [User!]!
+  findOne(id: String!): User!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): String!
+  verifyUser(verifyUserInput: VerifyUserInput!): String!
+  updateUser(id: String!, updateUserInput: UpdateUserInput!): User!
+  removeUser(id: String!): String!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  first_name: String
+  last_name: String
+  phone_number: String
+}
+
+input VerifyUserInput {
+  email: String!
+  type: String!
+  action: String!
+  otp: Float!
+}
+
+input UpdateUserInput {
+  email: String
+  password: String
+  first_name: String
+  last_name: String
+  phone_number: String
+}
